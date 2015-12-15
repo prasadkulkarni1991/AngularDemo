@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Password</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="login in loginDetailsList">
+        <td>{{login.userName}}</td>
+        <td>{{login.password}}</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

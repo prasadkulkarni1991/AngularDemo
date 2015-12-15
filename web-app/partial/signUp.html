@@ -1,0 +1,56 @@
+<html>
+<head>
+
+</head>
+<body>
+  <h2>Personal Details</h2>
+  <div>
+      <form name="userForm" ng-submit="submitForm()" novalidate>
+
+          <table>
+              <tr>
+                  <td>Name</td>
+                  <td ><input type="text" name="name" ng-model="name" required/>
+                      <span ng-show="userForm.name.$error.required">Name Is Required</span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Surname</td>
+                  <td><input type="text" name="surname" ng-model="surname" required/>
+                      <span ng-show="userForm.surname.$error.required">Surname Is Required</span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Email</td>
+                  <td><input type="email" name="email" ng-model="email" required/>
+                      <span ng-show="userForm.email.$error.required">Email Is Required</span>
+                      <span ng-show="userForm.email.$error.email && userForm.email.$dirty">Enter Valid Email</span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Contact  No</td>
+                  <td><input type="text" name="contactNo" ng-model="contactNo" ng-minlength="0" ng-maxlength="9" ng-pattern="/^[0-9]{1,11}$/" required/>
+                      <span ng-show="userForm.contactNo.$error.required">Contact No Required</span>
+                      <span ng-show="userForm.contactNo.$dirty && userForm.contactNo.$invalid">Enter Valid Number</span>
+                  </td>
+              </tr>
+              <tr>
+                  <td>DOB</td>
+                  <td><input type="date" name="dob" ng-model="dob" required/>
+                      <span ng-show="userForm.dob.$error.required">DOB Is Required</span>
+                  </td>
+              </tr>
+              <tr>
+                  <td> <button type="submit" ng-click="save1()" ng-disabled="userForm.name.$error.required || userForm.surname.$error.required ||
+                   userForm.email.$error.required || userForm.contactNo.$error.required || userForm.dob.$error.required">SignUp</button></td>
+                  <td></td>
+              </tr>
+
+          </table>
+
+      </form>
+  </div>
+
+</body>
+</html>
+
