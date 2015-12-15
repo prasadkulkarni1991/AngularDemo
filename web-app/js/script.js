@@ -24,7 +24,7 @@ enterprise.config(['$routeProvider',
 
     .service('loginService',[function($scope){
         var loginDetails=[];
-    this.addDetails = function(userName,password){
+    this.addLoginDetails = function(userName,password){
 
 
         loginDetails.push({
@@ -35,7 +35,7 @@ enterprise.config(['$routeProvider',
         return loginDetails
 
     };
-    this.getDetails = function () {
+    this.getLoginDetails = function () {
         debugger;
         loginDetailsList = loginDetails;
         return loginDetailsList;
@@ -46,7 +46,7 @@ enterprise.config(['$routeProvider',
 enterprise.controller('loginController',function($scope,loginService){
     $scope.save = function(){
         debugger;
-        $scope.details = loginService.addDetails($scope.userName,$scope.password);
+        $scope.details = loginService.addLoginDetails($scope.userName,$scope.password);
         if($scope.details){
             $scope.userName = "";
             $scope.password = ""
@@ -74,12 +74,13 @@ enterprise.controller('signUpController',function($scope){
         $scope.name = "";
         $scope.surname = "";
         $scope.email = "";
+        $scope.contactNo = "";
         $scope.dob = ""
     }
 });
 enterprise.controller('listController',function($scope,loginService){
     debugger;
     debugger;
-    $scope.loginDetailsList =loginService.getDetails();
+    $scope.loginDetailsList =loginService.getLoginDetails();
 });
 

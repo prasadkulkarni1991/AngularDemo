@@ -29,20 +29,20 @@
               </tr>
               <tr>
                   <td>Contact  No</td>
-                  <td><input type="text" name="contactNo" ng-model="contactNo" ng-minlength="0" ng-maxlength="9" ng-pattern="/^[0-9]{1,11}$/" required/>
+                  <td><input type="text" name="contactNo" ng-model="contactNo" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{1,11}$/" required/>
                       <span ng-show="userForm.contactNo.$error.required">Contact No Required</span>
                       <span ng-show="userForm.contactNo.$dirty && userForm.contactNo.$invalid">Enter Valid Number</span>
                   </td>
               </tr>
               <tr>
                   <td>DOB</td>
-                  <td><input type="date" name="dob" ng-model="dob" required/>
+                  <td><input type="date" name="dob" ng-model="dob"  required/>
                       <span ng-show="userForm.dob.$error.required">DOB Is Required</span>
                   </td>
               </tr>
               <tr>
                   <td> <button type="submit" ng-click="save1()" ng-disabled="userForm.name.$error.required || userForm.surname.$error.required ||
-                   userForm.email.$error.required || userForm.contactNo.$error.required || userForm.dob.$error.required">SignUp</button></td>
+                   userForm.email.$error.required || userForm.contactNo.$error.required || userForm.dob.$error.required ||userForm.email.$error.email">SignUp</button></td>
                   <td></td>
               </tr>
 
