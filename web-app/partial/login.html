@@ -4,9 +4,28 @@
      </head>
      <body>
      <div ng-controller="loginController">
-         UserName<input type="text" ng-model="userName"><br>
-         Password<input type="password" ng-model="password"><br>
-         <button type="submit" ng-model="save" ng-click="save(userName,password)">Save</button>
+         <form name="loginForm" novalidate>
+             <table>
+                 <tr>
+                     <td>UserName</td>
+                     <td><input type="text" name="userName" ng-model="userName" required>
+                     <span ng-show="loginForm.userName.$error.required">This Field Is Required</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>Password</td>
+                     <td><input type="password" name="password" ng-model="password" required>
+                         <span ng-show="loginForm.password.$error.required">This Field Is Required</span>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td><button type="submit" name="loginSave" ng-model="save" ng-click="save(userName,password)"
+                                 ng-disabled="loginForm.userName.$error.required || loginForm.password.$error.required">Login</button>
+                         </td>
+                 </tr>
+
+             </table>
+         </form>
      </div>
      </body>
  </html>
